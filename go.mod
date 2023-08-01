@@ -3,15 +3,18 @@ module github.com/ahmetson/hello-service
 go 1.21rc2
 
 replace github.com/ahmetson/service-lib => D:/sds/service-lib
+
 replace github.com/ahmetson/common-lib => D:/sds/common-lib
 
-require github.com/ahmetson/service-lib v0.0.0-20230730160650-f415d5261f3e
+require (
+	github.com/ahmetson/common-lib v0.0.0-20230717140750-5e95e61d69c2
+	github.com/ahmetson/service-lib v0.0.0-20230730160650-f415d5261f3e
+)
 
 require (
 	github.com/Microsoft/go-winio v0.5.2 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230518184743-7afd39499903 // indirect
 	github.com/acomagu/bufpipe v1.0.4 // indirect
-	github.com/ahmetson/common-lib v0.0.0-20230717140750-5e95e61d69c2 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.2.1 // indirect
 	github.com/cakturk/go-netstat v0.0.0-20200220111822-e5b49efee7a5 // indirect
 	github.com/charmbracelet/lipgloss v0.6.0 // indirect
