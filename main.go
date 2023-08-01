@@ -12,7 +12,9 @@ import (
 )
 
 func main() {
+	// Any service starts with definition of the logger and configuration
 	logger, _ := log.New("hello-service", true)
+	appConfig, _ := configuration.New(logger)
 
 	var onHello command.HandleFunc = func(request message.Request, _ *log.Logger, _ ...*remote.ClientSocket) message.Reply {
 		name, _ := request.Parameters.GetString("name")
@@ -25,8 +27,6 @@ func main() {
 	replier, _ := controller.SyncReplier(logger)
 	_ = replier.AddRoute(route)
 	_ = controller.AnyRoute(replier) // add to the replier a route that returns nothing
-
-	appConfig, _ := configuration.New(logger)
 
 	service, _ := independent.New(appConfig, logger)
 
